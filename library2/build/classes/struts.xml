@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="AuthorPro" class="action.AuthorProAction">
+            <result name="success">/WEB-INF/content/Menu.jsp</result>
+            <result name="error">/WEB-INF/content/error.jsp</result>
+        </action>
+        <action name="Search" class="action.Search">
+            <result name="success">/WEB-INF/content/show.jsp</result>
+            <result name="error">/WEB-INF/content/error.jsp</result>
+        </action>
+        <action name="DELETE" class="action.delete">
+            <result name="success">/WEB-INF/content/deletedone.jsp</result>
+            <result name="error">/WEB-INF/content/error.jsp</result>
+        </action>
+         <action name="back" class="action.BACK">
+            <result name="success">/WEB-INF/content/Menu.jsp</result>
+        </action>
+        <action name="*">
+            <result>/WEB-INF/content/{1}.jsp</result>
+        </action>
+    </package>
+</struts>
